@@ -7,7 +7,7 @@ const ListOfTask = () => {
   let todos = useSelector((state) => state);
   return (
     
-       <div>
+       <div className ="container">
         {todos.length > 0 &&
           todos.map((todo) => <Task key={todo.TaskId} todo={todo} />)}
       </div>

@@ -12,7 +12,7 @@ const  InputTask = () => {
         <div className="input-text">
         <h1
           style={{
-            color: "blue",
+            color: "white",
             fontSize: "5em",
             textAlign: "center",
           }}
@@ -20,12 +20,15 @@ const  InputTask = () => {
           
           To-Do-List
         </h1>
+        <div className="input-btn">
         <input 
+        style={{width: "500px",height:"45px", borderRadius:"5px", borderColor:"white"}}
         type="text" 
+        placeholder="Add New Task"
         value={name} 
         onChange={(e)=> setName(e.target.value)}  />
-        <Button
-          variant="primary"
+        <Button 
+          variant="light"
           type="submit"
           onClick={() => {
            dispatch( addnewTodo(
@@ -39,6 +42,8 @@ const  InputTask = () => {
         >
           Add task
         </Button>
+        </div>
+        
         </div>
       </div>
      

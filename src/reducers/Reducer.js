@@ -1,12 +1,12 @@
 
 import {todos} from '../components/ListData';
-import {ADD_TASK,  FILTER_TASK, EDIT_TASK } from '../actions';
+import {ADD_TASK,  FILTER_TASK, EDIT_TASK, DONE_TASK} from '../actions';
 
 let Reducer = (state = todos, action) =>{
   let newTodos;
     // eslint-disable-next-line default-case
     switch (action.type){
-
+ 
         case ADD_TASK:
         newTodos = [...state];
         newTodos.push(action.payload);
@@ -14,6 +14,10 @@ let Reducer = (state = todos, action) =>{
         case FILTER_TASK:
           newTodos = [...state];
           newTodos = newTodos.filter(todo => todo.TaskId !== action.payload);
+          return newTodos;
+          case DONE_TASK:
+          newTodos = [...state];
+          newTodos = newTodos.map(todo => todo.TaskId === action.payload ? {...todo, isDone : !todo.isDone}: todo);
           return newTodos;
           case EDIT_TASK:
             newTodos = [...state];

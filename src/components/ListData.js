@@ -3,13 +3,13 @@ export let todos = [
         TaskId: 1,
         name:
           "Send an email update to the team" ,
-          isDone: true,
+          isDone: false,
       },
       {
         TaskId: 2,
         name:
           "Schedule a meeting with the design agency" ,
-          isDone: true,
+          isDone: false,
       },
       {
         TaskId: 3,
